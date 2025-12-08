@@ -25,7 +25,7 @@ class FeatureEngineer:
         """Load data (use sampling for faster development)."""
         logger.info(f"Loading data from {self.input_file}...")
 
-        # For development, sample the data to make it manageable
+
         df = pd.read_csv(self.input_file)
 
         if sample_frac < 1.0:
@@ -157,7 +157,7 @@ def main():
 
     engineer = FeatureEngineer(input_file)
 
-    # Load data (sample 20% for faster processing during development)
+    # Loading data (sample 20% for faster processing during development)
     df = engineer.load_data(sample_frac=0.2)
 
     # Create features

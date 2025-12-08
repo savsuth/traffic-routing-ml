@@ -1,7 +1,3 @@
-"""
-Traffic Data Simulator
-Generates realistic traffic patterns for training ML models.
-"""
 
 import pandas as pd
 import numpy as np
@@ -16,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class TrafficSimulator:
-    """Generate realistic traffic data based on road network."""
+
 
     def __init__(self, graph_path: str, output_dir: str = "data/processed"):
         self.output_dir = Path(output_dir)
@@ -33,29 +29,28 @@ class TrafficSimulator:
             num_days: int = 180,
             hours_per_day: int = 24
     ) -> pd.DataFrame:
-        """Generate traffic data for all edges over time period."""
+
 
         logger.info(f"Generating {num_days} days of traffic data...")
 
         start = datetime.strptime(start_date, "%Y-%m-%d")
         all_data = []
 
-        # Progress bar for days
+
         for day in tqdm(range(num_days), desc="Generating days"):
             current_date = start + timedelta(days=day)
             is_weekend = current_date.weekday() >= 5
 
-            # Determine if there's an event today (5% chance)
+
             has_event = np.random.random() < 0.05
 
-            # Weather for the day
+
             weather = self._generate_weather(current_date)
 
             for hour in range(hours_per_day):
                 timestamp = current_date + timedelta(hours=hour)
 
-                # Sample edges (process all would be too slow)
-                # In production, you'd process all edges
+
                 edge_sample = list(self.G.edges(data=True, keys=True))[:5000]
 
                 for u, v, key, data in edge_sample:
@@ -64,7 +59,7 @@ class TrafficSimulator:
                     highway_type = data.get('highway_type', 'unknown')
                     speed_limit = data.get('speed_limit', 30)
 
-                    # Calculate traffic speed based on conditions
+
                     speed = self._calculate_speed(
                         hour=hour,
                         is_weekend=is_weekend,
@@ -77,7 +72,7 @@ class TrafficSimulator:
 
                     travel_time = (length / (speed * 0.44704)) if speed > 0 else 1000
 
-                    # Create record
+                    # Creating record
                     record = {
                         'edge_id': edge_id,
                         'timestamp': timestamp,
@@ -112,12 +107,12 @@ class TrafficSimulator:
             has_event: bool,
             distance_to_downtown: float
     ) -> float:
-        """Calculate realistic speed based on conditions."""
+
 
         # Start with speed limit
         speed = speed_limit
 
-        # Rush hour impact (7-9 AM, 4-7 PM on weekdays)
+
         if not is_weekend and self._is_rush_hour(hour):
             if highway_type in ['motorway', 'trunk', 'primary']:
                 speed *= np.random.uniform(0.5, 0.7)  # 30-50% slower
@@ -176,23 +171,21 @@ class TrafficSimulator:
         return {'temp': round(temp, 1), 'condition': condition}
 
     def _distance_to_downtown(self, node_id) -> float:
-        """Calculate approximate distance to downtown Boston."""
-        # Downtown Boston coords: (42.3601, -71.0589)
+
         if node_id not in self.G.nodes:
             return 5000
 
         node_data = self.G.nodes[node_id]
         lat, lon = node_data['y'], node_data['x']
 
-        # Simple Euclidean distance (good enough for simulation)
-        # 1 degree ≈ 111 km
+
         dx = (lon - (-71.0589)) * 111000 * np.cos(np.radians(42.3601))
         dy = (lat - 42.3601) * 111000
 
         return np.sqrt(dx ** 2 + dy ** 2)
 
     def save_data(self, df: pd.DataFrame, filename: str = "traffic_training_data.csv"):
-        """Save generated data."""
+
         output_path = self.output_dir / filename
 
         logger.info(f"Saving to {output_path}...")

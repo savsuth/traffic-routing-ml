@@ -3,7 +3,6 @@ Time-Dependent A* Algorithm
 Uses ML predictions for dynamic edge weights.
 """
 
-import networkx as nx
 import heapq
 import pickle
 import numpy as np
@@ -17,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 class TimeDependentAStar:
-    """A* routing with time-dependent edge costs predicted by ML."""
+
 
     def __init__(self, graph_path: str, models_dir: str = "data/models"):
         """Initialize router with graph and ML models."""
@@ -36,8 +35,7 @@ class TimeDependentAStar:
                 self.models[road_type] = pickle.load(f)
             logger.info(f"✓ Loaded {road_type} model")
 
-        # Load feature columns
-        # Load feature columns (they're in processed data directory)
+
         feature_file = Path("data/processed/feature_columns.txt")
         if not feature_file.exists():
             feature_file = models_dir / "feature_columns.txt"
@@ -53,19 +51,7 @@ class TimeDependentAStar:
             weather: str = 'sunny',
             temperature: float = 70.0
     ) -> Dict:
-        """
-        Find optimal route using time-dependent A*.
 
-        Args:
-            start_node: Starting node ID
-            goal_node: Destination node ID
-            departure_time: When to start journey
-            weather: Weather condition ('sunny', 'rainy', 'snowy')
-            temperature: Temperature in Fahrenheit
-
-        Returns:
-            Dictionary with route, ETA, distance, etc.
-        """
         logger.info(f"Finding route from {start_node} to {goal_node}")
         logger.info(f"Departure: {departure_time}")
 
