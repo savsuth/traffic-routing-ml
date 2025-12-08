@@ -1,0 +1,63 @@
+{
+  "training_results": {
+    "highway": {
+      "mae": 5.672621176120814,
+      "rmse": 14.666198938508806,
+      "r2": 0.6370607895439585,
+      "n_samples": 17345,
+      "road_types": [
+        "motorway",
+        "trunk"
+      ]
+    },
+    "major": {
+      "mae": 3.233089329511615,
+      "rmse": 4.985903683153927,
+      "r2": 0.5167158364650564,
+      "n_samples": 913075,
+      "road_types": [
+        "primary",
+        "secondary"
+      ]
+    },
+    "minor": {
+      "mae": 4.580724451328446,
+      "rmse": 6.472238881082817,
+      "r2": 0.24867155720711276,
+      "n_samples": 2080476,
+      "road_types": [
+        "tertiary",
+        "residential",
+        "unclassified"
+      ]
+    }
+  },
+  "test_results": {
+    "mae": 4.187486850967883,
+    "rmse": 6.109337331518306,
+    "r2": 0.35033524021332163
+  },
+  "feature_columns": [
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "day_of_week",
+    "day_sin",
+    "day_cos",
+    "month",
+    "is_weekend",
+    "is_morning_rush",
+    "is_evening_rush",
+    "is_night",
+    "is_rush_hour",
+    "temperature",
+    "is_rainy",
+    "is_snowy",
+    "event_nearby",
+    "road_hierarchy",
+    "speed_limit",
+    "distance_to_downtown",
+    "is_downtown",
+    "is_suburbs"
+  ]
+}
