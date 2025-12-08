@@ -1,4 +1,4 @@
-# Traffic-Aware Routing System with Machine Learning
+# Traffic-Aware Routing System with A* Algorithm
 
 > An intelligent routing system combining A* pathfinding with machine learning to predict optimal routes based on real-time traffic patterns on Boston's road network.
 
