@@ -151,16 +151,16 @@ brew install libomp
 
 ### Run Complete Pipeline
 ```bash
-# Step 1: Download Boston road network (~2 minutes)
+# Step 1: Download Boston road network 
 python src/data_collection/osm_downloader.py
 
-# Step 2: Generate traffic simulation data (~5 minutes)
+# Step 2: Generate traffic simulation data
 python src/data_collection/traffic_simulator.py
 
-# Step 3: Feature engineering (~2 minutes)
+# Step 3: Feature engineering 
 python src/preprocessing/feature_engineering.py
 
-# Step 4: Train ML models (~3 minutes)
+# Step 4: Train ML models 
 python src/models/train_model.py
 
 # Step 5: Test routing system
@@ -286,7 +286,7 @@ where:
 
 ### Model Performance Analysis
 
-#### Feature Importance (Top 10)
+#### Feature Importance 
 
 Based on LightGBM's feature importance scores:
 
