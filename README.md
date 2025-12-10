@@ -59,7 +59,7 @@ Unlike static routing systems, this solution accounts for time-dependent traffic
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              ML PREDICTION MODELS                           │
+│               PREDICTION MODELS                           │
 │  ┌───────────┐  ┌──────────────┐  ┌──────────────┐        │
 │  │  Highway  │  │ Major Roads  │  │ Minor Roads  │        │
 │  │ (LightGBM)│  │  (LightGBM)  │  │  (LightGBM)  │        │
