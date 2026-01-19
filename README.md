@@ -59,12 +59,12 @@ Unlike static routing systems, this solution accounts for time-dependent traffic
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
-│               PREDICTION MODELS                           │
-│  ┌───────────┐  ┌──────────────┐  ┌──────────────┐        │
-│  │  Highway  │  │ Major Roads  │  │ Minor Roads  │        │
-│  │ (LightGBM)│  │  (LightGBM)  │  │  (LightGBM)  │        │
-│  │ MAE: 32s  │  │  MAE: 29s    │  │  MAE: 18s    │        │
-│  └───────────┘  └──────────────┘  └──────────────┘        │
+│               PREDICTION MODELS                             │
+│  ┌───────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │  Highway  │  │ Major Roads  │  │ Minor Roads  │          │
+│  │ (LightGBM)│  │  (LightGBM)  │  │  (LightGBM)  │          │
+│  │ MAE: 32s  │  │  MAE: 29s    │  │  MAE: 18s    │          │
+│  └───────────┘  └──────────────┘  └──────────────┘          │
 └────────────────────┬────────────────────────────────────────┘
                      │
                      ▼
