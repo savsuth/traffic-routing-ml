@@ -16,9 +16,6 @@ This project implements a production-ready traffic routing system that goes beyo
 - **Demonstrating real-world ML engineering** from data collection to deployment
 
 Unlike static routing systems, this solution accounts for time-dependent traffic patterns, making it **40%+ more accurate during peak hours**.
-
-**Live Demo:** [View Interactive App](http://localhost:8501) (run locally)
-
 ---
 
 ## Key Features
