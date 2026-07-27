@@ -402,14 +402,6 @@ git commit -m "Add amazing feature"
 git push origin feature/amazing-feature
 ```
 
-### Contribution Guidelines
-
-1. **Code Style**: Follow PEP 8, use Black formatter
-2. **Documentation**: Add docstrings to all functions
-3. **Testing**: Write tests for new features
-4. **Commits**: Use clear, descriptive commit messages
-5. **Pull Requests**: Explain changes and link issues
-
 ---
 
 ## Author
@@ -417,15 +409,6 @@ git push origin feature/amazing-feature
 **Aasav Suthar** 
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/aasavsuthar)
-
-### Skills Demonstrated
-
-- **Algorithms**: A* pathfinding, graph traversal, heuristic design
-- **Machine Learning**: Regression, feature engineering, model evaluation
-- **Data Engineering**: Large-scale data processing, ETL pipelines
-- **Software Architecture**: Modular design, clean code principles
-- **Web Development**: Interactive dashboards, API design
-- **DevOps**: Git, virtual environments, dependency management
 
 ---
 
