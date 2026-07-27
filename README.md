@@ -310,41 +310,6 @@ Error Range        | Percentage of Predictions
 
 ---
 
-## Future Enhancements
-
-### Planned Features
-
-#### Short-term (Next 3 months)
--  **Real-time API Integration**: Connect to TomTom/Google Maps for live traffic
--  **Multiple Route Options**: Return top 3 alternative routes with comparison
--  **Turn-by-Turn Directions**: Convert node sequences to human-readable directions
--  **Export Functionality**: Download routes as GPX/KML files
--  **Mobile Responsive Design**: Optimize Streamlit interface for mobile
-
-#### Medium-term (3-6 months)
--  **Historical Analytics Dashboard**: Compare predicted vs actual travel times
--  **User Accounts**: Save favorite routes and preferences
--  **Public Transit Integration**: Multi-modal routing with MBTA data
--  **REST API**: FastAPI backend for external applications
--  **Docker Deployment**: Containerize entire application
-
-#### Long-term (6-12 months)
--  **React Native Mobile App**: Native iOS/Android application
--  **Real-time Model Updates**: Online learning from GPS traces
--  **Incident Detection**: Automatic rerouting on accidents/closures
--  **Community Features**: User-reported traffic conditions
--  **Commercial API**: Public API with rate limiting and billing
-
-### Research Directions
-
-- **Deep Learning Models**: LSTM/GRU for temporal pattern learning
--  **Graph Neural Networks**: Spatial relationship modeling with GCN
--  **Reinforcement Learning**: Dynamic rerouting with Q-learning
--  **Attention Mechanisms**: Focus on relevant spatial-temporal contexts
--  **Transfer Learning**: Apply models to other cities
-
----
-
 ## Testing
 
 ### Run Unit Tests
