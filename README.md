@@ -145,18 +145,18 @@ pip install -r requirements.txt
 brew install libomp
 ```
 
-### Run Complete Pipeline
+### Running the Complete Pipeline
 ```bash
-# Step 1: Download Boston road network 
+# Step 1: Downloading road network 
 python src/data_collection/osm_downloader.py
 
-# Step 2: Generate traffic simulation data
+# Step 2: Generating traffic simulation data
 python src/data_collection/traffic_simulator.py
 
 # Step 3: Feature engineering 
 python src/preprocessing/feature_engineering.py
 
-# Step 4: Train ML models 
+# Step 4: Training ML models 
 python src/models/train_model.py
 
 # Step 5: Test routing system
